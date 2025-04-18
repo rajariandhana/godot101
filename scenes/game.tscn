@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsrrpwfqv5gs"]
+[gd_scene load_steps=13 format=3 uid="uid://bsrrpwfqv5gs"]
 
 [ext_resource type="PackedScene" uid="uid://jcgf51elmmor" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://bxlceqpusupow" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://clku0j168ev8p" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bm2lsb06pwo7o" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://d0r6jvog4qd5n" path="res://scenes/killzone.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cj6r8cre68ufq" path="res://scenes/slime.tscn" id="5_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -214,7 +215,7 @@ _data = {
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 z_index = 5
-position = Vector2(1, 0)
+position = Vector2(-8, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -278,6 +279,14 @@ position = Vector2(776, -72)
 
 [node name="Coin11" parent="Coins" instance=ExtResource("4_lbhrr")]
 position = Vector2(568, -152)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Slime" parent="Enemies" instance=ExtResource("5_p57ef")]
+position = Vector2(136, -48)
+
+[node name="Slime2" parent="Enemies" instance=ExtResource("5_p57ef")]
+position = Vector2(568, 32)
 
 [node name="Killzone" parent="." instance=ExtResource("5_iywne")]
 position = Vector2(0, 119)
